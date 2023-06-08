@@ -23,13 +23,13 @@ namespace Practica_01
         /// Describe el elemento comparable más chico del coleccionable.
         /// </summary>
         /// <returns>Coleccionable</returns>
-        Coleccionable minimo();
+        Comparable minimo();
 
         /// <summary>
         /// Describe el elemento comparable más grande del coleccionable.
         /// </summary>
         /// <returns>Comparable</returns>
-        Coleccionable maximo();
+        Comparable maximo();
 
         /// <summary>
         /// Agrega el elemento comparable dado al coleccionable.
@@ -42,6 +42,6 @@ namespace Practica_01
         /// </summary>
         /// <param name="comparable">Elemento comparable según el cual se describe true o false.</param>
         /// <returns>Bool</returns>
-        Comparable contiene(Comparable comparable);
+        bool contiene(Comparable comparable);
     }
 }
