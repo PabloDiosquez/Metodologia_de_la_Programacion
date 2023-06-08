@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practica_01
 {
+    //EJERCICIO 3 ☂
+
+    /// <summary>
+    /// Representa objetos que almacenan elementos comparables.
+    /// </summary>
     public interface Coleccionable
     {
         /// <summary>
