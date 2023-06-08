@@ -16,22 +16,19 @@ namespace Practica_01
     public interface Comparable
     {
         /// <summary>
-        /// Describe true si el objeto que recibe el mensaje es el mismo que el “comparable” recibido por parámetro, 
-        /// describe false en caso contrario.
+        /// Indica si el objeto que recibe el mensaje es el mismo que el “comparable” recibido por parámetro.
         /// </summary>
         /// <returns>Bool</returns>
         bool sosIgual(Comparable comparable);
 
         /// <summary>
-        /// Describe true si el objeto que recibe el mensaje es más chico que el “comparable” recibido por parámetro; 
-        /// describe false en caso contrario.
+        /// Indica si el objeto que recibe el mensaje es más chico que el “comparable” recibido por parámetro.
         /// </summary>
         /// <returns>Bool</returns>
         bool sosMenor(Comparable comparable);
 
         /// <summary>
-        /// Describe true si el objeto que recibe el mensaje es más chico que el "comparable" recibido por parámetro;
-        /// describe false en caso contrario.
+        /// Indica si el objeto que recibe el mensaje es más chico que el "comparable" recibido por parámetro.
         /// </summary>
         /// <returns>Bool</returns>
         bool sosMayor(Comparable comparable);
