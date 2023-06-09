@@ -84,7 +84,7 @@ namespace Practica_01
 
             llenarPersonas(cola);
 
-            informar(multiple);
+            informarPersonas(multiple);
 
         }
 
@@ -124,6 +124,26 @@ namespace Practica_01
             Console.WriteLine("Ingrese un valor: ");
 
             if (coleccionable.contiene(new Numero(int.Parse(Console.ReadLine()))))
+            {
+                Console.WriteLine("El elemento leído está en la colección");
+            }
+            else
+            {
+                Console.WriteLine("El elemento leído NO está en la colección");
+            }
+        }
+
+        public static void informarPersonas(Coleccionable coleccionable)
+        {
+            Console.WriteLine($"¿Cuántos? {coleccionable.cuantos()}");
+
+            Console.WriteLine($"Máximo: {coleccionable.maximo()}");
+
+            Console.WriteLine($"Mínimo: {coleccionable.minimo()}");
+
+            Console.WriteLine("Ingrese un valor: ");
+
+            if (coleccionable.contiene(new Persona("NN",int.Parse(Console.ReadLine()))))
             {
                 Console.WriteLine("El elemento leído está en la colección");
             }
