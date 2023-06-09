@@ -37,11 +37,54 @@ namespace Practica_01
             Comparable tercerNumero = new Numero(2); // Compara por valor, no por referencia 👁
 
             Console.WriteLine(pila.contiene(tercerNumero));
+
+            // Probando las funciones ... 🥨
+
+            Coleccionable datos = new Pila();
+
+            llenar(datos);
+
+            informar(datos);    
         }
 
         // EJERCICIO 5 🛸
 
-        
+        /// <summary>
+        /// Agrega 20 comparables elegidos al azar al coleccionable dado.
+        /// </summary>
+        /// <param name="coleccionable">Coleccionable</param>
+        private static void llenar(Coleccionable coleccionable) 
+        {
+            Random rd = new Random();
 
+            for (int i = 0; i < 20; i++)
+            {
+                coleccionable.agregar(new Numero(rd.Next(1, 100)));
+            }
+        }
+
+        // EJERCICIO 6 🛸
+
+        private static void informar(Coleccionable coleccionable)
+        {
+            Console.WriteLine($"¿Cuántos? {coleccionable.cuantos()}");
+
+            Console.WriteLine($"Máximo: {coleccionable.maximo()}");
+
+            Console.WriteLine($"Mínimo: {coleccionable.minimo()}");
+
+            Console.WriteLine("Ingrese un valor: ");
+
+            Comparable nuevoComparable = new Numero(int.Parse(Console.ReadLine()));
+
+            if (coleccionable.contiene(nuevoComparable))
+            {
+                Console.WriteLine("El elemento leído está en la colección");
+            }
+            else
+            {
+                Console.WriteLine("El elemento leído NO está en la colección");
+            }
+        }
     }
 }

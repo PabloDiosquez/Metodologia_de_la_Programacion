@@ -100,7 +100,7 @@ namespace Practica_01
                 }
             }
 
-            return maximoAlMomento
+            return maximoAlMomento;
         }
 
         public void agregar(Comparable comparable)
