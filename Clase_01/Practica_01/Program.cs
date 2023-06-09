@@ -18,33 +18,41 @@ namespace Practica_01
 
             // Una pequeña pila 📚
 
-            Pila pila = new Pila();
+            // Pila pila = new Pila();
 
-            pila.apilar(primerNumero);
+            //pila.apilar(primerNumero);
 
-            pila.apilar(segundoNumero);
+            //pila.apilar(segundoNumero);
 
-            // Código genérico 🖖🏼
+            //// Código genérico 🖖🏼
 
-            Console.WriteLine("¡Probando la pila!");
+            //Console.WriteLine("¡Probando la pila!");
 
-            Console.WriteLine(pila.cuantos());
+            //Console.WriteLine(pila.cuantos());
 
-            Console.WriteLine(pila.minimo().ToString());
+            //Console.WriteLine(pila.minimo().ToString());
 
-            Console.WriteLine(pila.maximo().ToString());
+            //Console.WriteLine(pila.maximo().ToString());
 
-            Comparable tercerNumero = new Numero(2); // Compara por valor, no por referencia 👁
+            //Comparable tercerNumero = new Numero(2); // Compara por valor, no por referencia 👁
 
-            Console.WriteLine(pila.contiene(tercerNumero));
+            //Console.WriteLine(pila.contiene(tercerNumero));
 
             // Probando las funciones ... 🥨
 
-            Coleccionable datos = new Pila();
+            // EJERCICIO 7
 
-            llenar(datos);
+            Coleccionable pila = new Pila();
 
-            informar(datos);    
+            Coleccionable cola = new Cola();
+
+            llenar(pila);
+
+            llenar(cola);
+
+            informar(pila);
+
+            informar(cola);
         }
 
         // EJERCICIO 5 🛸
@@ -65,6 +73,13 @@ namespace Practica_01
 
         // EJERCICIO 6 🛸
 
+        /// <summary>
+        /// Imprime por consola la cantidad de elementos que tiene el coleccionable dado, el elemento 
+        /// mínimo, el máximo y si contiene, o no, como elemento un valor leído por teclado.
+        /// Precondiciones:
+        /// ◽ El coleccionable dado no debe ser vacío.
+        /// </summary>
+        /// <param name="coleccionable">Coleccionable</param>
         private static void informar(Coleccionable coleccionable)
         {
             Console.WriteLine($"¿Cuántos? {coleccionable.cuantos()}");
