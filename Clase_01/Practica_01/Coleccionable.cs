@@ -21,12 +21,16 @@ namespace Practica_01
 
         /// <summary>
         /// Describe el elemento comparable más chico del coleccionable.
+        /// Precondiciones:
+        /// ◽ El coleccionable que recibe el mensaje no debe ser vacío.
         /// </summary>
         /// <returns>Coleccionable</returns>
         Comparable minimo();
 
         /// <summary>
         /// Describe el elemento comparable más grande del coleccionable.
+        /// Precondiciones:
+        /// ◽ El coleccionable que recibe el mensaje no debe ser vacío.
         /// </summary>
         /// <returns>Comparable</returns>
         Comparable maximo();

@@ -16,12 +16,12 @@ namespace Practica_01
     {
         // Atributos 
 
-        List<Comparable> pila;
+        List<Comparable> elementos;
 
         // Constructor
         public Pila()
         {
-            pila = new List<Comparable>();
+            elementos = new List<Comparable>();
         }
 
         // Métodos de la clase 
@@ -32,18 +32,20 @@ namespace Practica_01
         /// <param name="comparable">Elemento comparable que se apila en la pila</param>
         public void apilar(Comparable comparable)
         {
-            pila.Add(comparable);
+            elementos.Add(comparable);
         }
 
         /// <summary>
         /// Describe el comparable que resulta de desapilar el elemento en el tope de la pila que recibe el mensaje.
+        /// Precondición:
+        /// ◽ La pila que recibe el mensaje debe ser no vacía.
         /// </summary>
         /// <returns>Comparable</returns>
         public Comparable desapilar()
         {
-            Comparable desapilado = pila[pila.Count - 1];
+            Comparable desapilado = elementos[elementos.Count - 1];
 
-            pila.Remove(desapilado);
+            elementos.RemoveAt(elementos.Count - 1);
 
             return desapilado;
         }
@@ -54,7 +56,7 @@ namespace Practica_01
         /// <returns>Comparable</returns>
         public Comparable verTope() 
         {
-            return pila[pila.Count - 1];
+            return elementos[elementos.Count - 1];
         }
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace Practica_01
         /// <returns>Bool</returns>
         public bool esVacia()
         {
-            return pila.Count == 0;
+            return elementos.Count == 0;
         }
 
         // Métodos de la interfaz
@@ -74,7 +76,7 @@ namespace Practica_01
         /// <returns></returns>
         public int cuantos()
         {
-            return pila.Count;
+            return elementos.Count;
         }
 
         /// <summary>
@@ -87,7 +89,7 @@ namespace Practica_01
         {
             Comparable maximoAlMomento = verTope();
 
-            foreach (Comparable comparable in pila)
+            foreach (Comparable comparable in elementos)
             {
                 if (comparable.sosMayor(maximoAlMomento))
                 {
@@ -108,7 +110,7 @@ namespace Practica_01
         {
             Comparable minimoAlMomento = verTope();
 
-            foreach (Comparable comparable in pila)
+            foreach (Comparable comparable in elementos)
             {
                 if (comparable.sosMenor(minimoAlMomento))
                 {
@@ -135,7 +137,7 @@ namespace Practica_01
         /// <returns>Bool</returns>
         public bool contiene(Comparable comparableDado)
         {
-            foreach (Comparable comparable in pila)
+            foreach (Comparable comparable in elementos)
             {
                 if (comparable.sosIgual(comparableDado))
                 {

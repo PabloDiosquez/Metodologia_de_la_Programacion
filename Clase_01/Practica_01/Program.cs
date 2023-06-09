@@ -8,11 +8,40 @@ namespace Practica_01
         {
             // Pequeño ensayo ...
 
-            Numero primerNumero = new Numero(2);
+            Comparable primerNumero, segundoNumero;
 
-            Numero segundoNumero = new Numero(6);
+            primerNumero = new Numero(2);
+
+            segundoNumero = new Numero(6);
 
             Console.WriteLine(primerNumero.sosMenor(segundoNumero));
+
+            // Una pequeña pila 📚
+
+            Pila pila = new Pila();
+
+            pila.apilar(primerNumero);
+
+            pila.apilar(segundoNumero);
+
+            // Código genérico 🖖🏼
+
+            Console.WriteLine("¡Probando la pila!");
+
+            Console.WriteLine(pila.cuantos());
+
+            Console.WriteLine(pila.minimo().ToString());
+
+            Console.WriteLine(pila.maximo().ToString());
+
+            Comparable tercerNumero = new Numero(2); // Compara por valor, no por referencia 👁
+
+            Console.WriteLine(pila.contiene(tercerNumero));
         }
+
+        // EJERCICIO 5 🛸
+
+        
+
     }
 }
