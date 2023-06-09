@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Practica_01
 {
+    // EJERCICIO 8 🕴🏼
     public class ColeccionMultiple: Coleccionable
     {
         // Atributos 
 
-        private Pila pila;
+        private Coleccionable pila;
 
-        private Cola cola;
+        private Coleccionable cola;
 
         // Constructor
         public ColeccionMultiple(Pila pila, Cola cola)

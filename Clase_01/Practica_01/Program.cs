@@ -40,11 +40,27 @@ namespace Practica_01
 
             // Probando las funciones ... 🥨
 
-            // EJERCICIO 7
+            // 🔴 EJERCICIO 7
+
+            //Coleccionable pila = new Pila();
+
+            //Coleccionable cola = new Cola();
+
+            //llenar(pila);
+
+            //llenar(cola);
+
+            //informar(pila);
+
+            //informar(cola);
+
+            // 🔴 EJERCICIO 9
 
             Coleccionable pila = new Pila();
 
             Coleccionable cola = new Cola();
+
+            Coleccionable coleccionMultiple = new ColeccionMultiple((Pila)pila, (Cola)cola);
 
             llenar(pila);
 
@@ -53,6 +69,8 @@ namespace Practica_01
             informar(pila);
 
             informar(cola);
+
+            informar(coleccionMultiple);
         }
 
         // EJERCICIO 5 🛸
