@@ -50,6 +50,12 @@ namespace Practica_01
             return dni;
         }
 
+        public override string ToString()
+        {
+            return $"Nombre: {nombre} -- DNI: {dni}";
+        }
+
+        // Métodos de la interfaz => Las personas se comparan por DNI.
         public bool sosIgual(Comparable comparable)
         {
             return getDni() == ((Persona)comparable).getDni();

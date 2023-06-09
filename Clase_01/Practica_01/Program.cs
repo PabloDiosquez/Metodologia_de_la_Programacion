@@ -56,21 +56,36 @@ namespace Practica_01
 
             // 🔴 EJERCICIO 9
 
+            //Coleccionable pila = new Pila();
+
+            //Coleccionable cola = new Cola();
+
+            //Coleccionable coleccionMultiple = new ColeccionMultiple((Pila)pila, (Cola)cola);
+
+            //llenar(pila);
+
+            //llenar(cola);
+
+            //informar(pila);
+
+            //informar(cola);
+
+            //informar(coleccionMultiple);
+
+            // 🔴 EJERCICIO 13 🐣
+
             Coleccionable pila = new Pila();
 
             Coleccionable cola = new Cola();
 
-            Coleccionable coleccionMultiple = new ColeccionMultiple((Pila)pila, (Cola)cola);
+            ColeccionMultiple multiple = new ColeccionMultiple((Pila)pila, (Cola)cola);
 
-            llenar(pila);
+            llenarPersonas(pila);
 
-            llenar(cola);
+            llenarPersonas(cola);
 
-            informar(pila);
+            informar(multiple);
 
-            informar(cola);
-
-            informar(coleccionMultiple);
         }
 
         // EJERCICIO 5 🛸
@@ -108,15 +123,32 @@ namespace Practica_01
 
             Console.WriteLine("Ingrese un valor: ");
 
-            Comparable nuevoComparable = new Numero(int.Parse(Console.ReadLine()));
-
-            if (coleccionable.contiene(nuevoComparable))
+            if (coleccionable.contiene(new Numero(int.Parse(Console.ReadLine()))))
             {
                 Console.WriteLine("El elemento leído está en la colección");
             }
             else
             {
                 Console.WriteLine("El elemento leído NO está en la colección");
+            }
+        }
+
+        // EJERCICIO 12 🖖🏼
+
+        /// <summary>
+        /// Agrega 20 personas al azar al coleccionable dado.
+        /// </summary>
+        /// <param name="personas">Coleccionable -- [Persona]</param>
+        private static void llenarPersonas(Coleccionable personas)
+        {
+            string[] strNombresReales = { "Pepe", "Luis", "María", "Paola", "Fernanda", "Gilberto", "Sanjuana", "MaríaJosé",
+                "Irma", "Francisco", "Mario", "Ángela", "Fabiola", "Pablo", "Sofía", "Armando", "Homero", "Pepe", "José" , "Josefina" };
+
+            Random rand = new Random(); 
+            
+            for (int i = 0; i < 20; i++)
+            {
+                personas.agregar(new Persona(strNombresReales[rand.Next(20)], rand.Next(100, 1000)));
             }
         }
     }
