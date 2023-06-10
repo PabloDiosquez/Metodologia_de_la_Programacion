@@ -86,6 +86,20 @@ namespace Practica_01
 
             informarPersonas(multiple);
 
+            // EJERCICIO 17 🥕
+
+            Coleccionable pilaAlumnos = new Pila();
+
+            Coleccionable colaAlumnos = new Cola();
+
+            ColeccionMultiple alumnos = new ColeccionMultiple((Pila)pilaAlumnos, (Cola)colaAlumnos);
+
+            llenarAlumnos(pilaAlumnos);
+
+            llenarAlumnos(colaAlumnos);
+
+            informarAlumnos(alumnos);
+
         }
 
         // EJERCICIO 5 🛸
@@ -153,6 +167,26 @@ namespace Practica_01
             }
         }
 
+        public static void informarAlumnos(Coleccionable coleccionable)
+        {
+            Console.WriteLine($"¿Cuántos? {coleccionable.cuantos()}");
+
+            Console.WriteLine($"Máximo: {coleccionable.maximo()}");
+
+            Console.WriteLine($"Mínimo: {coleccionable.minimo()}");
+
+            Console.WriteLine("Ingrese un valor: ");
+
+            if (coleccionable.contiene(new Alumno("NN", int.Parse(Console.ReadLine()), 321, 9.6)))
+            {
+                Console.WriteLine("El elemento leído está en la colección");
+            }
+            else
+            {
+                Console.WriteLine("El elemento leído NO está en la colección");
+            }
+        }
+
         // EJERCICIO 12 🖖🏼
 
         /// <summary>
@@ -162,7 +196,7 @@ namespace Practica_01
         private static void llenarPersonas(Coleccionable personas)
         {
             string[] strNombresReales = { "Pepe", "Luis", "María", "Paola", "Fernanda", "Gilberto", "Sanjuana", "MaríaJosé",
-                "Irma", "Francisco", "Mario", "Ángela", "Fabiola", "Pablo", "Sofía", "Armando", "Homero", "Pepe", "José" , "Josefina" };
+            "Irma", "Francisco", "Mario", "Ángela", "Fabiola", "Pablo", "Sofía", "Armando", "Homero", "Pepe", "José" , "Josefina" };
 
             Random rand = new Random(); 
             
@@ -170,6 +204,26 @@ namespace Practica_01
             {
                 personas.agregar(new Persona(strNombresReales[rand.Next(20)], rand.Next(100, 1000)));
             }
+        }
+
+        // EJERCICIO 16 👽
+
+        /// <summary>
+        /// Agrega al coleccionable dado 20 alumnos elegidos al azar. 
+        /// </summary>
+        /// <param name="alumnos">Coleccionable de elementos de tipo Alumno</param>
+        private static void llenarAlumnos(Coleccionable alumnos) 
+        {
+            string[] strNombresReales = { "Pepe", "Luis", "María", "Paola", "Fernanda", "Gilberto", "Sanjuana", "MaríaJosé",
+            "Irma", "Francisco", "Mario", "Ángela", "Fabiola", "Pablo", "Sofía", "Armando", "Homero", "Pepe", "José" , "Josefina" };
+
+            Random rand = new Random();
+
+            for (int i = 0; i < 20; i++)
+            {
+                alumnos.agregar(new Alumno(strNombresReales[rand.Next(20)], rand.Next(100,1000), rand.Next(100), rand.NextDouble()*10));
+            }
+
         }
     }
 }

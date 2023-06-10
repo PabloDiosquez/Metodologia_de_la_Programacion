@@ -15,6 +15,15 @@ namespace Practica_01
         private double promedio;
 
         // Constructor
+
+        /// <summary>
+        /// El constructor de la clase que recibe un nombre “n”, un DNI “d”, un legajo “l” y un promedio “p” y los 
+        /// almacena en las variables correspondientes.
+        /// </summary>
+        /// <param name="nombre">String</param>
+        /// <param name="dni">Int</param>
+        /// <param name="legajo">Int</param>
+        /// <param name="promedio">Double</param>
         public Alumno(string nombre, int dni, int legajo, double promedio) : base(nombre, dni)
         {
             this.legajo = legajo;
@@ -41,5 +50,6 @@ namespace Practica_01
         {
             return promedio;
         }
+
     }
 }
