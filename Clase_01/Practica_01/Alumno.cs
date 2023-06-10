@@ -51,5 +51,34 @@ namespace Practica_01
             return promedio;
         }
 
+        /// <summary>
+        /// Indica si el alumno que recibe el mensaje tiene el mismo legajo que el alumno dado.
+        /// </summary>
+        /// <param name="comparable">Elemento de tipo comparable - Alumno</param>
+        /// <returns>Bool</returns>
+        public new bool sosIgual(Comparable comparable)
+        {
+            return getLegajo() == ((Alumno)comparable).getLegajo();
+        }
+
+        /// <summary>
+        /// Indica si el alumno que recibe el mensaje tiene un legajo menor que el alumno dado.
+        /// </summary>
+        /// <param name="comparable">Elemento de tipo comparable - Alumno</param>
+        /// <returns>Bool</returns>
+        public new bool sosMenor(Comparable comparable)
+        {
+            return getLegajo() < ((Alumno)comparable).getLegajo();  
+        }
+
+        /// <summary>
+        /// Indica si el alumno que recibe el mensaje tiene un legajo mayor que el alumno dado.
+        /// </summary>
+        /// <param name="comparable">Elemento de tipo comparable - Alumno</param>
+        /// <returns>Bool</returns>
+        public new bool sosMayor(Comparable comparable)
+        {
+            return (getLegajo() > ((Alumno)comparable).getLegajo());
+        }
     }
 }
