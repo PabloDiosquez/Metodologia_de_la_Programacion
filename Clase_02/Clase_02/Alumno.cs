@@ -38,6 +38,11 @@ namespace Clase_02
             return legajo;
         }
 
+        public double getPromedio()
+        {
+            return promedio;
+        }
+
         // Mecanismo para cambiar de estrategia 🥨
 
         public void setEstrategiaDeComparacion(EstrategiaDeComparacion estrategia)

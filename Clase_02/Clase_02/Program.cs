@@ -10,11 +10,11 @@ namespace Clase_02
 
             Alumno alumno1 = new Alumno(123456, "Alberto", 12, 7.2);
 
-            Alumno alumno2 = new Alumno(123456, "Matías", 11, 8.9);
+            Alumno alumno2 = new Alumno(123789, "Matías", 12, 8.9);
 
-            ComparacionPorLegajo comparacionPorLegajo = new ComparacionPorLegajo();
+            Console.WriteLine(alumno1.sosIgual(alumno2));
 
-            comparacionPorLegajo.sosIgual(alumno1, alumno2);
+            
         }
     }
 }
