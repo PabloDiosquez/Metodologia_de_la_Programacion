@@ -12,17 +12,17 @@ namespace Clase_02
     /// Modela un conjunto. Un conjunto es una colección de elementos sin ninguna repetición. Es decir, si se intenta 
     /// almacenar un elemento que ya está en el conjunto, éste elemento no se almacena ya que sino estaría repetido.
     /// </summary>
-    public class Conjunto
+    public class Conjunto : Coleccionable
     {
         // Atributos
 
-        private List<Comparable> conjunto;
+        private List<Comparable> elementos;
 
         // Constructor
 
         public Conjunto()
         {
-            conjunto = new List<Comparable>();
+            elementos = new List<Comparable>();
         }
 
         // Métodos de instancia
@@ -36,7 +36,7 @@ namespace Clase_02
         {
             if (!pertenece(elemento))
             {
-                conjunto.Add(elemento);
+                elementos.Add(elemento);
             }
         }
 
@@ -47,15 +47,73 @@ namespace Clase_02
         /// <returns>Bool</returns>
         public bool pertenece(Comparable comparable)
         {
-            foreach (Comparable elemento in conjunto)       
-            {                                               
-                if (elemento.sosIgual(comparable))          
+            foreach (Comparable elemento in elementos)
+            {
+                if (elemento.sosIgual(comparable))
                 {
                     return true;
                 }
             }
-            
+
             return false;
         }
+
+        // Métodos de interfaz
+        public bool contiene(Comparable comparable)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Describe la cantidad de elementos del conjunto dado.
+        /// </summary>
+        /// <returns>Int</returns>
+        public int cuantos()
+        {
+            return elementos.Count;
+        }
+
+        /// <summary>
+        /// Describe el elemento más grande del conjunto de elementos dado.
+        /// Precondiciones:
+        /// ◽ El conjunto dado no debe ser vacío.
+        /// </summary>
+        /// <returns>Comparable</returns>
+        public Comparable maximo()
+        {
+            Comparable maximoAlMomento = elementos.First();
+
+            foreach (Comparable elemento in elementos)
+            {
+                if (elemento.sosMayor(maximoAlMomento))
+                {
+                    maximoAlMomento = elemento;
+                }
+            }
+
+            return maximoAlMomento;
+        }
+
+        /// <summary>
+        /// Describe el elemento más chico del conjunto de elementos dado.
+        /// Precondiciones:
+        /// ◽ El conjunto dado no debe ser vacío.
+        /// </summary>
+        /// <returns>Comparable</returns>
+        public Comparable minimo()
+        {
+            Comparable minimoAlMomento = elementos.First();
+
+            foreach (Comparable elemento in elementos)
+            {
+                if (elemento.sosMenor(minimoAlMomento)) 
+                {
+                    minimoAlMomento = elemento;
+                }
+            }
+
+            return minimoAlMomento;
+        }
+
     }
 }
