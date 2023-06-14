@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace Clase_02
 {
+    /// <summary>
+    /// Representa un par clave - valor.
+    /// </summary>
     public class ClaveValor : Comparable
     {
+        // Atributos 
+
         private Comparable clave;
 
-        private Object valor;
+        private Comparable valor;
 
-        public ClaveValor(Comparable clave, Object valor)
+        // Constructor
+        public ClaveValor(Comparable clave, Comparable valor)
         {
             this.clave = clave;
 
@@ -21,24 +27,42 @@ namespace Clase_02
 
         // Meétodo de instancia
 
-        public Object getValor()
+        public Comparable getClave()
+        {
+            return clave;
+        }
+        public Comparable getValor()
         {
             return valor;
         }
 
+        private void setValor(Comparable valor)
+        {
+            this.valor=valor;
+        }
+
+        public void setValor_DelParDeClave_(Comparable valor, Comparable clave)
+        {
+            if (getClave().sosIgual(clave))
+            {
+                setValor(valor);
+            }
+        }
+
+        // Métodos de la interfaz
         public bool sosIgual(Comparable comparable)
         {
-            return clave.sosIgual(comparable);
+            return valor.sosIgual(comparable);
         }
 
         public bool sosMayor(Comparable comparable)
         {
-            return clave.sosMayor(comparable);
+            return valor.sosMayor(comparable);
         }
 
         public bool sosMenor(Comparable comparable)
         {
-            return clave.sosMenor(comparable);  
+            return valor.sosMenor(comparable);  
         }
     }
 }

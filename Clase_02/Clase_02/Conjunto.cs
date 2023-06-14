@@ -58,6 +58,11 @@ namespace Clase_02
             return false;
         }
 
+        public List<Comparable> getElementos()
+        {
+            return elementos;
+        }
+
         // Métodos de interfaz
         public bool contiene(Comparable comparable)
         {

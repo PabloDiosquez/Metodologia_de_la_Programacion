@@ -8,16 +8,16 @@ namespace Clase_02
 {
     // Modela un diccionario. Un Diccionario es una colección que almacena elementos, donde cada elemento tiene una
     // clave asociada.Las claves no pueden repetirse.
-    public class Diccionario
+    public class Diccionario : Coleccionable    
     {
         // Atributos
 
-        private Conjunto elementos;
+        private Conjunto paresClaveValor;
 
         // Constructor
         public Diccionario()
         {
-            elementos = new Conjunto();
+            paresClaveValor = new Conjunto();
         }
 
         // Métodos de instancia
@@ -28,21 +28,109 @@ namespace Clase_02
         /// </summary>
         /// <param name="clave"></param>
         /// <param name="valor"></param>
-        public void agregar(Comparable clave, Object valor)
+        public void agregar(Comparable clave, Comparable valor)
         {
-            ClaveValor claveValor = new ClaveValor(clave, valor);
-
-            elementos.agregar(claveValor);
+            if (getClaves().pertenece(clave))
+            {
+                // TODO: Usar el método setValor_DelParDeClave_(Comparable valor, Comparable clave) para setear el valor de la clave.
+            }
+            else 
+            {
+                paresClaveValor.agregar(new ClaveValor(clave, valor));
+            }
         }
 
         /// <summary>
-        /// Describe el valor de **claveValor**.
+        /// Describe el valor asociado a la clave recibida por parámetro, en caso de que ésta pertenezca al diccionario; en 
+        /// caso contrario, describe null.
         /// </summary>
         /// <param name="claveValor">ClaveValor</param>
-        /// <returns>Object</returns>
-        public Object valorDe(ClaveValor claveValor)
+        /// <returns>Comparable</returns>
+        public Comparable valorDe(Comparable clave)
         {
-            return claveValor.getValor();
+            foreach (ClaveValor claveValor in paresClaveValor.getElementos())
+            {
+                if (claveValor.getClave().sosIgual(clave))
+                {
+                    return claveValor.getValor();
+                }
+            }
+
+            return null;
         }
+
+        /// <summary>
+        /// Describe el conjunto formado por todos los pares clave-valor del diccionario que recibe el mensaje.
+        /// </summary>
+        /// <returns>Conjunto</returns>
+        private Conjunto getElementos()
+        {
+            return paresClaveValor;
+        }
+
+        /// <summary>
+        /// Describe el conjunto formado por todas las claves del diccionario que recibe el mensaje.
+        /// </summary>
+        /// <returns>Conjunto de claves (tipo Comparable)</returns>
+        private Conjunto getClaves()
+        {
+            Conjunto claves = new Conjunto();
+
+            foreach (ClaveValor claveValor in paresClaveValor.getElementos())
+            {
+                claves.agregar(claveValor.getClave());
+            }
+
+            return claves;
+        }
+
+        // Métodos de interfaz
+        public void agregar(Comparable comparable)
+        {
+
+        }
+
+        /// <summary>
+        /// Indica si el valor dado es valor de algún par clave-valor del diccionario que recibe el mensaje.
+        /// </summary>
+        /// <param name="valor">Valor - Tipo: Comparable</param>
+        /// <returns>Bool</returns>
+        public bool contiene(Comparable valor)
+        {
+            foreach (ClaveValor claveValor in paresClaveValor.getElementos())
+            {
+                if (claveValor.getValor().sosIgual(valor))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Describe la cantidad de elementos del diccionario dado.
+        /// </summary>
+        /// <returns>Int</returns>
+        public int cuantos()
+        {
+            return paresClaveValor.cuantos();
+        }
+
+        /// <summary>
+        /// Describe el valor más grande del diccionario dado.
+        /// </summary>
+        /// <returns>Co</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public Comparable maximo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Comparable minimo()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
