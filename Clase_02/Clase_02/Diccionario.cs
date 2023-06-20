@@ -44,6 +44,19 @@ namespace Clase_02
         }
 
         /// <summary>
+        /// Describe el valor asociado a la clave recibida por parámetro o null si la clave no existe.
+        /// </summary>
+        /// <param name="clave">Elemento comparable</param>
+        /// <returns>Comparable</returns>
+        public Comparable valorDe(Comparable clave)
+        {
+            return parClaveValorDadaLaClave(clave).getValor();
+        }
+
+
+        // Métodos auxiliares 🖖🏼
+
+        /// <summary>
         /// Indica si la clave dada existe en el diccionario que recibe el mensaje.
         /// </summary>
         /// <param name="clave">Elemento comparable</param>
