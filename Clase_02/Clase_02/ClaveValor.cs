@@ -36,6 +36,11 @@ namespace Clase_02
             return valor;
         }
 
+        public void setValor(Comparable valor)
+        {
+            this.valor=valor;
+        }
+
         // Método para modificar la estrategia de comparación
 
         public void setEstrategia(EstrategiaDeComparacion estrategia)

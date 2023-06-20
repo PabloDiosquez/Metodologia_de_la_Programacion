@@ -10,7 +10,7 @@ namespace Clase_02
     /// Un Diccionario es una colección que almacena elementos, donde cada elemento tiene una clave asociada.
     /// Las claves no pueden repetirse.
     /// </summary>
-    public class Diccionario
+    public class Diccionario : Coleccionable
     {
         // Atributos
 
@@ -97,6 +97,32 @@ namespace Clase_02
             }
 
             return claves;
+        }
+
+        // Métodos de interface
+        public int cuantos()
+        {
+            return paresClaveValor.cuantos();
+        }
+
+        public Comparable minimo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Comparable maximo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool contiene(Comparable comparable)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void agregar(Comparable comparable)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Clase_02
     /// Modela un conjunto. Un conjunto es una colección que almacena elementos sin repetición.Es decir, si se intenta
     /// almacenar un elemento que ya está en el conjunto, éste elemento no se almacena ya que sino estaría repetido.
     /// </summary>
-    public class Conjunto : Coleccionable
+    public class Conjunto : Coleccionable, Iterable
     {
         // Atributos 
 
@@ -28,7 +28,7 @@ namespace Clase_02
         /// Describe los elementos de tipo Comparable que contiene el conjunto.
         /// </summary>
         /// <returns>Lista de comparables</returns>
-        private List<Comparable> getElementos()
+        public List<Comparable> getElementos()
         {
             return elementos;
         }
@@ -63,7 +63,7 @@ namespace Clase_02
             return false;
         }
 
-        // Métodos de la interface
+        // Métodos de la interface Comparable
 
         /// <summary>
         /// Describe la cantidad de elementos del conjunto que recibe el mensaje.
@@ -120,6 +120,12 @@ namespace Clase_02
         public bool contiene(Comparable comparable)
         {
             return pertenece(comparable);
+        }
+
+        // Método interface Iterable
+        public Iterador crearIterador()
+        {
+            return new IteradorDeListas(elementos);
         }
     }
 }
