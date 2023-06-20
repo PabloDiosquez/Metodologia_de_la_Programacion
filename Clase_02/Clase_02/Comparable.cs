@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Clase_02
 {
-    // Interfaz documentada en la clase anterior ... 
     public interface Comparable
     {
         bool sosIgual(Comparable comparable);

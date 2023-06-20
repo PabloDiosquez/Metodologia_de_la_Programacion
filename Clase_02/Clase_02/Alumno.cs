@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clase_02
 {
-    // 3) Modificar el contexto.
-    public class Alumno : Persona 
+    public class Alumno : Persona
     {
         // Atributos
 
@@ -19,21 +18,21 @@ namespace Clase_02
 
         private double promedio;
 
-        // Crear la composición. 
-        private EstrategiaDeComparacion estrategiaDeComparacion;
+        EstrategiaDeComparacion estrategia;
 
-        // Constructor 
+        // Constructor
         public Alumno(int dni, string nombre, int legajo, double promedio) : base(dni, nombre)
         {
             this.legajo = legajo;
 
             this.promedio = promedio;
 
-            estrategiaDeComparacion = new ComparacionPorLegajo(); // Estrategia de comparación por defecto.
+            estrategia = new ComparacionPorLegajo();
         }
 
         // Métodos de instancia
-        public int getLegajo() 
+
+        public int getLegajo()
         {
             return legajo;
         }
@@ -43,29 +42,26 @@ namespace Clase_02
             return promedio;
         }
 
-        // Mecanismo para cambiar de estrategia 🥨
+        // Método para modificar la estrategia de comparación
 
-        public void setEstrategiaDeComparacion(EstrategiaDeComparacion estrategia)
+        public void setEstrategia(EstrategiaDeComparacion estrategia) 
         {
-            estrategiaDeComparacion = estrategia;
+            this.estrategia = estrategia;
         }
 
-        // Delegar la resposibilidad de las comparaciones a las estrategias 👽
-
-        public new bool sosIgual(Comparable comparable)
+        public new bool sosIgual(Comparable alumno)
         {
-            return estrategiaDeComparacion.sosIgual(this, comparable);
+            return estrategia.sosIgual(this, alumno);
         }
 
-        public new bool sosMenor(Comparable comparable)
+        public new bool sosMenor(Comparable alumno)
         {
-            return estrategiaDeComparacion.sosMenor(this, comparable);
+            return estrategia.sosMenor(this, alumno);
         }
 
-        public new bool sosMayor(Comparable comparable)
+        public new bool sosMayor(Comparable alumno)
         {
-            return estrategiaDeComparacion.sosMayor(this, comparable);
+            return estrategia.sosMayor(this, alumno);   
         }
-
     }
 }

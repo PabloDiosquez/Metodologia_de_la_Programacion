@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Clase_02
 {
-    // Clase documentada en la clase anterior.
     public class Persona : Comparable
     {
         // Atributos
+
         private int dni;
 
         private string nombre;
 
         // Constructor
-        public Persona(int dni, string nombre)
+
+        public Persona(int dni, string nombre) 
         {
             this.dni = dni;
 
             this.nombre = nombre;
         }
 
-        // Métodos de instancia
+        // Métodos de instancia 
+
         public int getDni()
         {
             return dni;
@@ -33,10 +35,10 @@ namespace Clase_02
             return nombre;
         }
 
-        // Métodos de la interfaz
-        public bool sosIgual(Comparable comparable)
+        // Métodos de interface
+        public bool sosIgual(Comparable persona)
         {
-            return getDni() == ((Persona)comparable).getDni();
+            return getDni() == ((Persona)persona).getDni();
         }
 
         public bool sosMayor(Comparable comparable)
@@ -44,9 +46,9 @@ namespace Clase_02
             return getDni() > ((Persona)comparable).getDni();
         }
 
-        public bool sosMenor(Comparable comparable)
+        public bool sosMenor(Comparable persona)
         {
-            return getDni() < ((Persona)comparable).getDni();
+            return getDni() < ((Persona)persona).getDni();   
         }
     }
 }
