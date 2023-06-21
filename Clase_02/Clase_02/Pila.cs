@@ -10,7 +10,7 @@ namespace Clase_02
     /// Representa una colección de instancias de tamaño variable de último en entrar, 
     /// primero en salir (LIFO) del mismo tipo especificado.
     /// </summary>
-    public class Pila: Coleccionable
+    public class Pila: Coleccionable, Iterable
     {
         // Atributos
 
@@ -52,7 +52,7 @@ namespace Clase_02
         /// <returns>Bool</returns>
         public bool estaVacia() 
         {
-            return pila.Count == 0;  
+            return cuantos() == 0;  
         }
 
         /// <summary>
@@ -67,27 +67,107 @@ namespace Clase_02
         // Métodos de la interface Coleccionable
         public void agregar(Comparable comparable)
         {
-            throw new NotImplementedException();
+            apilar(comparable);
         }
 
         public bool contiene(Comparable comparable)
         {
-            throw new NotImplementedException();
+            Iterador iteradorDePila = crearIterador(pila);
+
+            while (!iteradorDePila.fin() && !iteradorDePila.actual().sosIgual(comparable))
+            {
+                iteradorDePila.siguiente();
+            }
+
+            return !iteradorDePila.fin();
         }
 
         public int cuantos()
         {
-            throw new NotImplementedException();
+            //return pila.Count;
+
+            Iterador iterador = crearIterador(pila);
+
+            int cantidadDeElementosVistos = 0;
+
+            while (!iterador.fin())
+            {
+                cantidadDeElementosVistos++;
+
+                iterador.siguiente();
+            }
+
+            return cantidadDeElementosVistos;
         }
 
+        /// <summary>
+        /// ...
+        /// Precondición:
+        /// ◽ La pila no debe ser vacía.
+        /// </summary>
+        /// <returns>Elemento comparable</returns>
         public Comparable maximo()
         {
-            throw new NotImplementedException();
+            Iterador iteradorDePila = crearIterador(pila);
+
+            Comparable maximoAlMomento = iteradorDePila.actual();
+
+            while (!iteradorDePila.fin())
+            {
+                maximoAlMomento = maximoEntre(iteradorDePila.actual(), maximoAlMomento);
+
+                iteradorDePila.siguiente();
+            }
+
+            return maximoAlMomento;
         }
 
+        private Comparable maximoEntre(Comparable comparable1, Comparable comparable2) 
+        {
+            if (comparable1.sosMayor(comparable2)) 
+            {
+                return comparable1;
+            }
+
+            return comparable2;
+        }
+
+        /// <summary>
+        /// ...
+        /// Precondición:
+        /// ◽ La pila no debe ser vacía.
+        /// </summary>
+        /// <returns>Elemento comparable</returns>
         public Comparable minimo()
         {
-            throw new NotImplementedException();
+            Iterador iterador = crearIterador(pila);
+
+            Comparable minimoAlMomento = iterador.actual();
+
+            while (!iterador.fin())
+            {
+                minimoAlMomento = minimoEntre(iterador.actual(), minimoAlMomento);
+
+                iterador.siguiente();
+            }
+
+            return minimoAlMomento;
+        }
+
+        private Comparable minimoEntre(Comparable comparable1, Comparable comparable2)
+        {
+            if (comparable1.sosMenor(comparable2))
+            {
+                return comparable1;
+            }
+
+            return comparable2;
+        }
+
+        // Método de la interface Iterable
+        public Iterador crearIterador(List<Comparable> pila)
+        {
+            return new IteradorDeListas(pila);
         }
     }
 }

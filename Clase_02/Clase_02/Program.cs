@@ -10,10 +10,10 @@ namespace Clase_02
 
             Conjunto conjunto = new Conjunto();
 
-            recorrerIterable(conjunto);
+            imprimir(conjunto);
         }
 
-        public static void recorrerIterable(Iterable iterable)
+        public static void imprimir(Iterable iterable)
         {
             Iterador iterador = iterable.crearIterador();
 
