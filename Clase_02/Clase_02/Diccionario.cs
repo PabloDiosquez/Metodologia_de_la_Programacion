@@ -99,25 +99,82 @@ namespace Clase_02
             return claves;
         }
 
+        private List<Comparable> getValores()
+        {
+            List<Comparable> valores = new List<Comparable>();
+
+            foreach (ClaveValor claveValor in paresClaveValor.getElementos())
+            {
+                valores.Add(claveValor.getValor());
+            }
+
+            return valores;
+        }
+
         // Métodos de interface
         public int cuantos()
         {
             return paresClaveValor.cuantos();
         }
 
+        /// <summary>
+        /// Describe el valor más chico de los pares clave-valor del diccionario que recibe el mensaje.
+        /// Precondición: 
+        /// ◽ El diccionario no debe ser vacío.
+        /// </summary>
+        /// <returns>Elemento comparable</returns>
         public Comparable minimo()
         {
-            throw new NotImplementedException();
+            Comparable minimoAlMomento = paresClaveValor.getElementos()[0];
+
+            foreach (Comparable valor in getValores())
+            {
+                if (valor.sosMenor(minimoAlMomento)) 
+                {
+                    minimoAlMomento = valor;
+                }
+            }
+
+            return minimoAlMomento;
         }
 
+        /// <summary>
+        /// Describe el valor más grande de los pares clave-valor del diccionario que recibe el mensaje.
+        /// Precondición: 
+        /// ◽ El diccionario no debe ser vacío.
+        /// </summary>
+        /// <returns>Elemento comparable</returns>
         public Comparable maximo()
         {
-            throw new NotImplementedException();
+            Comparable maximoAlMomento = paresClaveValor.getElementos()[0];
+
+            foreach (Comparable valor in getValores())
+            {
+                if (valor.sosMayor(maximoAlMomento))
+                {
+                    maximoAlMomento = valor;
+                }
+            }
+
+            return maximoAlMomento;
         }
 
-        public bool contiene(Comparable comparable)
+        /// <summary>
+        /// Indica si el elemento comparable dado es uno de los valores de los pares clave-valor del diccionario que recibe el mensaje.
+        /// </summary>
+        /// <param name="comparable">Valor comparable</param>
+        /// <returns>Bool</returns>
+        public bool contiene(Comparable valorDado)
         {
-            throw new NotImplementedException();
+            foreach (Comparable valor in getValores())
+            {
+                if (valor.sosIgual(valorDado))
+                {
+                    return true;    
+                }
+            }
+
+            return false;
         }
 
         public void agregar(Comparable comparable)
