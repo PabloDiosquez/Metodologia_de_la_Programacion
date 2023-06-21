@@ -72,7 +72,7 @@ namespace Clase_02
 
         public bool contiene(Comparable comparable)
         {
-            Iterador iteradorDePila = crearIterador(pila);
+            Iterador iteradorDePila = crearIterador();
 
             while (!iteradorDePila.fin() && !iteradorDePila.actual().sosIgual(comparable))
             {
@@ -86,7 +86,7 @@ namespace Clase_02
         {
             //return pila.Count;
 
-            Iterador iterador = crearIterador(pila);
+            Iterador iterador = crearIterador();
 
             int cantidadDeElementosVistos = 0;
 
@@ -108,7 +108,7 @@ namespace Clase_02
         /// <returns>Elemento comparable</returns>
         public Comparable maximo()
         {
-            Iterador iteradorDePila = crearIterador(pila);
+            Iterador iteradorDePila = crearIterador();
 
             Comparable maximoAlMomento = iteradorDePila.actual();
 
@@ -140,7 +140,7 @@ namespace Clase_02
         /// <returns>Elemento comparable</returns>
         public Comparable minimo()
         {
-            Iterador iterador = crearIterador(pila);
+            Iterador iterador = crearIterador();
 
             Comparable minimoAlMomento = iterador.actual();
 
@@ -165,7 +165,7 @@ namespace Clase_02
         }
 
         // Método de la interface Iterable
-        public Iterador crearIterador(List<Comparable> pila)
+        public Iterador crearIterador()
         {
             return new IteradorDeListas(pila);
         }
