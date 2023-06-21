@@ -74,6 +74,8 @@ namespace Clase_02
         {
             Iterador iteradorDePila = crearIterador();
 
+            iteradorDePila.primero();
+
             while (!iteradorDePila.fin() && !iteradorDePila.actual().sosIgual(comparable))
             {
                 iteradorDePila.siguiente();
@@ -89,6 +91,8 @@ namespace Clase_02
             Iterador iterador = crearIterador();
 
             int cantidadDeElementosVistos = 0;
+
+            iterador.primero(); 
 
             while (!iterador.fin())
             {
@@ -111,6 +115,8 @@ namespace Clase_02
             Iterador iteradorDePila = crearIterador();
 
             Comparable maximoAlMomento = iteradorDePila.actual();
+
+            iteradorDePila.primero();
 
             while (!iteradorDePila.fin())
             {
@@ -143,6 +149,8 @@ namespace Clase_02
             Iterador iterador = crearIterador();
 
             Comparable minimoAlMomento = iterador.actual();
+
+            iterador.primero();
 
             while (!iterador.fin())
             {

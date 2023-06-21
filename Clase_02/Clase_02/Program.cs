@@ -17,6 +17,8 @@ namespace Clase_02
         {
             Iterador iterador = iterable.crearIterador();
 
+            iterador.primero();
+
             while (!iterador.fin())
             {
                 Console.WriteLine(iterador.actual().ToString());
