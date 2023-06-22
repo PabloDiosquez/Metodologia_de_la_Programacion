@@ -27,5 +27,21 @@ namespace Clase_02
             }
         }
 
+        // Ejercicio 9
+
+        public static void cambiarEstrategia(Coleccionable coleccionable, EstrategiaDeComparacion estrategia)
+        {
+            Iterador iterador = coleccionable.crearIterador();
+
+            iterador.primero();
+
+            while (!iterador.fin())
+            {
+                // iterador.actual().setEstrategia(estrategia);
+
+                iterador.siguiente();
+            }
+        }
+
     }
 }
