@@ -70,6 +70,11 @@ namespace Clase_02
             apilar(comparable);
         }
 
+        /// <summary>
+        /// Indica si la pila que recibe el mensaje contiene al elemento comparable dado por parámetro.
+        /// </summary>
+        /// <param name="comparable">Elemento comparable</param>
+        /// <returns>Bool</returns>
         public bool contiene(Comparable comparable)
         {
             Iterador iteradorDePila = crearIterador();
@@ -84,6 +89,10 @@ namespace Clase_02
             return !iteradorDePila.fin();
         }
 
+        /// <summary>
+        /// Describe la cantidad de elementos apilados de la pila.
+        /// </summary>
+        /// <returns>Int</returns>
         public int cuantos()
         {
             //return pila.Count;
@@ -105,7 +114,7 @@ namespace Clase_02
         }
 
         /// <summary>
-        /// ...
+        /// Describe el elemento más grande de la pila que recibe el mensaje.
         /// Precondición:
         /// ◽ La pila no debe ser vacía.
         /// </summary>
@@ -128,6 +137,12 @@ namespace Clase_02
             return maximoAlMomento;
         }
 
+        /// <summary>
+        /// Describe el elemento más grande entre los dos elementos dados.
+        /// </summary>
+        /// <param name="comparable1">Elemento comparable</param>
+        /// <param name="comparable2">Elemento comparable</param>
+        /// <returns>Comparable</returns>
         private Comparable maximoEntre(Comparable comparable1, Comparable comparable2) 
         {
             if (comparable1.sosMayor(comparable2)) 
@@ -139,7 +154,7 @@ namespace Clase_02
         }
 
         /// <summary>
-        /// ...
+        /// Describe el elemento más chico de la pila que recibe el mensaje.
         /// Precondición:
         /// ◽ La pila no debe ser vacía.
         /// </summary>
@@ -162,6 +177,12 @@ namespace Clase_02
             return minimoAlMomento;
         }
 
+        /// <summary>
+        /// Describe el elemento más chico entre los dos elementos comparables dados.
+        /// </summary>
+        /// <param name="comparable1"></param>
+        /// <param name="comparable2"></param>
+        /// <returns></returns>
         private Comparable minimoEntre(Comparable comparable1, Comparable comparable2)
         {
             if (comparable1.sosMenor(comparable2))
@@ -173,6 +194,10 @@ namespace Clase_02
         }
 
         // Método de la interface Iterable
+        /// <summary>
+        /// Crea un iterador para recorrer el iterable que recibe el mensaje.
+        /// </summary>
+        /// <returns>Iterador</returns>
         public Iterador crearIterador()
         {
             return new IteradorDeListas(pila);

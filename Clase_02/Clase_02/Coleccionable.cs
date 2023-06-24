@@ -9,7 +9,7 @@ namespace Clase_02
     /// <summary>
     /// Representa objetos que almacenan comparables.
     /// </summary>
-    public interface Coleccionable
+    public interface Coleccionable : Iterable
     {
         int cuantos();
 
