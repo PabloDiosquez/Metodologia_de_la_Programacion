@@ -28,7 +28,11 @@ namespace Clase_02
         }
 
         // Ejercicio 9
-
+        /// <summary>
+        /// Recibe un coleccionable de alumnos y cambia la estrategia de comparación de los mismos por la estrategia dada.
+        /// </summary>
+        /// <param name="coleccionable">[Alumno]</param>
+        /// <param name="estrategia">EstrategiaDeComparacion</param>
         public static void cambiarEstrategia(Coleccionable coleccionable, EstrategiaDeComparacion estrategia)
         {
             Iterador iterador = coleccionable.crearIterador();
@@ -37,7 +41,7 @@ namespace Clase_02
 
             while (!iterador.fin())
             {
-                // iterador.actual().setEstrategia(estrategia);
+                ((Alumno)iterador.actual()).setEstrategia(estrategia);
 
                 iterador.siguiente();
             }

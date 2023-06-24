@@ -10,7 +10,7 @@ namespace Clase_02
     /// Un Diccionario es una colección que almacena elementos, donde cada elemento tiene una clave asociada.
     /// Las claves no pueden repetirse.
     /// </summary>
-    public class Diccionario : Coleccionable
+    public class Diccionario : Coleccionable, Iterable
     {
         // Atributos
 
@@ -180,6 +180,12 @@ namespace Clase_02
         public void agregar(Comparable comparable)
         {
             throw new NotImplementedException();
+        }
+
+        // Método de la interface iterable
+        public Iterador crearIterador()
+        {
+            return new IteradorDeListas(getValores());
         }
     }
 }
