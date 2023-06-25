@@ -25,16 +25,21 @@ namespace Clase_03
         /// <returns>String</returns>
         public string stringAleatorio(int cantidadDeCaracteres)
         {
-            string bancoDeCaracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
             string aleatorio = string.Empty;
 
             for (int i = 0; i < cantidadDeCaracteres; i++)
             {
-                aleatorio += bancoDeCaracteres[new GeneradorDeDatosAleatorios().numeroAleatorio(bancoDeCaracteres.Length)];
+                aleatorio += caracterAleatorio();
             }
            
             return aleatorio;
+        }
+
+        private char caracterAleatorio() 
+        {
+            string bancoDeCaracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            return bancoDeCaracteres[new GeneradorDeDatosAleatorios().numeroAleatorio(bancoDeCaracteres.Length)];
         }
     }
 }

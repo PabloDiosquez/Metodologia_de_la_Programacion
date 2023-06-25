@@ -13,7 +13,7 @@ namespace Clase_03
             //llenar(pilaDeNumeros);
             //informar(pilaDeNumeros);
 
-            
+            //Console.WriteLine(new GeneradorDeDatosAleatorios().stringAleatorio(10));
         }
     }
 }
