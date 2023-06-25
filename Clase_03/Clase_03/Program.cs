@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using static Clase_03.FuncionesAuxiliares;
 
 namespace Clase_03
 {
@@ -6,7 +8,10 @@ namespace Clase_03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Coleccionable pilaDeNumeros = new Pila();
+
+            llenar(pilaDeNumeros);
+            informar(pilaDeNumeros);
         }
     }
 }

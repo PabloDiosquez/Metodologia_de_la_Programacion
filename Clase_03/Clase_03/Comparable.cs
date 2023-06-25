@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal interface Comparable
+    public interface Comparable
     {
+        bool sosIgual(Comparable comparable);
+
+        bool sosMenor(Comparable comparable);
+
+        bool sosMayor(Comparable comparable);
     }
 }

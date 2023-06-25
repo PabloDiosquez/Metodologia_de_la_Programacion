@@ -19,9 +19,10 @@ namespace Clase_03
         public static void informar(Coleccionable coleccionable)
         {
             Console.WriteLine($"Cantidad de elementos: {coleccionable.cuantos()}");
-            Console.WriteLine($"Mínimo: {coleccionable.minimo()}");
-            Console.WriteLine($"Máximo: {coleccionable.maximo()}");
+            Console.WriteLine($"Mínimo: {coleccionable.minimo().ToString()}");
+            Console.WriteLine($"Máximo: {coleccionable.maximo().ToString()}");
 
+            Console.WriteLine("Número:");
             if (coleccionable.contiene(new Numero(int.Parse(Console.ReadLine()))))
             {
                 Console.WriteLine("El comparable está contenido en el coleccionable.");
