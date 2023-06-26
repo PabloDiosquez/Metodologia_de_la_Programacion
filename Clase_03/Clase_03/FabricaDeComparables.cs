@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    public abstract class FabricaDeComparables
+    public abstract class FabricaDeComparables : IFabricaDeComparables
     {
         // Método de clase 
-        public static Comparable crearProducto(int idProducto)
+        public static Comparable crearProductoAleatorio(int idProducto)
         {
             FabricaDeComparables fabricaDeComparables = null;
 
@@ -23,10 +23,28 @@ namespace Clase_03
                     break;
             }
 
-            return fabricaDeComparables.crearProducto();
+            return fabricaDeComparables.crearAleatorio();
         }
 
-        // Método de instancia
-        public abstract Comparable crearProducto();
+        public static Comparable crearProductoPorTeclado(int idProducto)
+        {
+            FabricaDeComparables fabricaDeComparables = null;
+
+            switch (idProducto)
+            {
+                case 1:
+                    fabricaDeComparables = new FabricaDeNumeros();
+                    break;
+                case 2:
+                    fabricaDeComparables = new FabricaDePersonas();
+                    break;
+            }
+
+            return fabricaDeComparables.crearPorTeclado();
+        }
+
+        public abstract Comparable crearAleatorio();
+
+        public abstract Comparable crearPorTeclado();
     }
 }

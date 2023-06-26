@@ -16,7 +16,7 @@ namespace Clase_03
 
             for (int i = 0; i < 20; i++)
             {
-                coleccionable.agregar(FabricaDeComparables.crearProducto(opcion));
+                coleccionable.agregar(FabricaDeComparables.crearProductoAleatorio(opcion));
             }
         }
 
@@ -26,8 +26,9 @@ namespace Clase_03
             Console.WriteLine($"Mínimo: {coleccionable.minimo().ToString()}");
             Console.WriteLine($"Máximo: {coleccionable.maximo().ToString()}");
 
-            Console.WriteLine("Número:");
-            if (coleccionable.contiene(new Numero(int.Parse(Console.ReadLine()))))
+            Console.WriteLine("Id Producto:");
+            int opcion = new LectorDeDatos().numeroPorTeclado();
+            if (coleccionable.contiene(FabricaDeComparables.crearProductoPorTeclado(opcion)))
             {
                 Console.WriteLine("El comparable está contenido en el coleccionable.");
             }

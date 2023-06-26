@@ -8,9 +8,14 @@ namespace Clase_03
 {
     public class FabricaDeNumeros : FabricaDeComparables
     {
-        public override Comparable crearProducto()
+        public override Comparable crearAleatorio()
         {
             return new Numero(new GeneradorDeDatosAleatorios().numeroAleatorio(1000));
+        }
+
+        public override Comparable crearPorTeclado()
+        {
+            return new Numero(new LectorDeDatos().numeroPorTeclado());
         }
     }
 }
