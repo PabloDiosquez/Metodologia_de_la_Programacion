@@ -11,7 +11,7 @@ namespace Clase_03
         /// <summary>
         /// Describe un número aleatorio entre 0 y la cota dada por parámetro.
         /// </summary>
-        /// <param name="cotaSuperior">Número</param>
+        /// <param name="cotaSuperior">Número que describe la cantidad de caracteres que debe tener el string</param>
         /// <returns>Número</returns>
         public int numeroAleatorio(int cotaSuperior)
         {

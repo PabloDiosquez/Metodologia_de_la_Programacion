@@ -8,9 +8,18 @@ namespace Clase_03
 {
     internal class FabricaDePersonas : FabricaDeComparables
     {
-        public override Comparable crearProducto()
+        public override Comparable crearAleatorio()
         {
-            return new Persona();
+            GeneradorDeDatosAleatorios generador = new GeneradorDeDatosAleatorios();
+
+            return new Persona(generador.stringAleatorio(10), generador.numeroAleatorio(1000));
+        }
+
+        public override Comparable crearPorTeclado()
+        {
+            LectorDeDatos lector = new LectorDeDatos(); 
+
+            return new Persona(lector.stringPorTeclado(), lector.numeroPorTeclado());
         }
     }
 }
