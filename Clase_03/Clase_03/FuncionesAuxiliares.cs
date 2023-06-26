@@ -12,7 +12,9 @@ namespace Clase_03
         {
             for (int i = 0; i < 20; i++)
             {
-                coleccionable.agregar(new Numero(new Random().Next(101)));
+                int opcion = new LectorDeDatos().numeroPorTeclado();
+
+                coleccionable.agregar(FabricaDeComparables.crearProducto(opcion));
             }
         }
 
