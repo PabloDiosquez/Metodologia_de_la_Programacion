@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal class FabricaDeNumeros
+    public class FabricaDeNumeros : FabricaDeComparables
     {
+        public override Comparable crearProducto()
+        {
+            return new Numero(new GeneradorDeDatosAleatorios().numeroAleatorio(1000));
+        }
     }
 }

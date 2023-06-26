@@ -10,8 +10,8 @@ namespace Clase_03
         {
             Coleccionable pilaDeNumeros = new Pila();
 
-            //llenar(pilaDeNumeros);
-            //informar(pilaDeNumeros);
+            llenar(pilaDeNumeros);
+            informar(pilaDeNumeros);
 
             //Console.WriteLine(new GeneradorDeDatosAleatorios().stringAleatorio(10));
         }

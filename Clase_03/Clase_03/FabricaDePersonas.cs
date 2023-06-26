@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal class FabricaDePersonas
+    internal class FabricaDePersonas : FabricaDeComparables
     {
+        public override Comparable crearProducto()
+        {
+            return new Persona();
+        }
     }
 }

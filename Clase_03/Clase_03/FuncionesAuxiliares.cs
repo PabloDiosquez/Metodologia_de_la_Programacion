@@ -10,10 +10,12 @@ namespace Clase_03
     {
         public static void llenar(Coleccionable coleccionable)
         {
+            Console.WriteLine("Id Producto:");
+
+            int opcion = new LectorDeDatos().numeroPorTeclado();
+
             for (int i = 0; i < 20; i++)
             {
-                int opcion = new LectorDeDatos().numeroPorTeclado();
-
                 coleccionable.agregar(FabricaDeComparables.crearProducto(opcion));
             }
         }
