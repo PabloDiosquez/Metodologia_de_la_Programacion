@@ -35,6 +35,10 @@ namespace Clase_03
             return aleatorio;
         }
 
+        /// <summary>
+        /// Describe un caracter de manera "aleatoria".
+        /// </summary>
+        /// <returns>Char</returns>
         private char caracterAleatorio() 
         {
             string bancoDeCaracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
