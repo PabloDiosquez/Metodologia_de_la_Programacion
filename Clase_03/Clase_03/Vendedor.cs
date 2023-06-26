@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    public class Vendedor : Persona
+    public class Vendedor : Persona, IObservado
     {
         // Atributos
         private double sueldoBasico;
 
         private double bonus;
+
+        private List<IObservador> observadores;
 
         // Constructor
         public Vendedor(string nombre, int dni, double sueldoBasico) : base(nombre, dni)
@@ -19,6 +21,8 @@ namespace Clase_03
             this.sueldoBasico = sueldoBasico;
 
             bonus = 1;
+
+            observadores = new List<IObservador>();
         }
 
         // Métodos de instancia
@@ -27,9 +31,11 @@ namespace Clase_03
         /// 
         /// </summary>
         /// <param name="montoDeLaVenta"></param>
-        public void venta(double montoDeLaVenta)
+        public void venta(double monto)
         {
-            Console.WriteLine($"Monto de la venta: {montoDeLaVenta}");
+            notificar();
+
+            Console.WriteLine($"Monto de la venta: {monto}");
         }
 
         /// <summary>
@@ -38,6 +44,25 @@ namespace Clase_03
         public void aumentaBonus()
         {
             bonus += 0.1;
+        }
+
+        // Métodos de la interface IObservado
+        public void agregar(IObservador observador)
+        {
+            observadores.Add(observador);
+        }
+
+        public void quitar(IObservador observador)
+        {
+            observadores.Remove(observador);    
+        }
+
+        public void notificar()
+        {
+            foreach (IObservador observador in observadores)
+            {
+                observador.actualizar(this);
+            }
         }
     }
 }
