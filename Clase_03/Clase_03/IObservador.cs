@@ -8,6 +8,6 @@ namespace Clase_03
 {
     public interface IObservador
     {
-        void actualizar(IObservado observado);
+        void actualizar(double numero, IObservado observado);
     }
 }

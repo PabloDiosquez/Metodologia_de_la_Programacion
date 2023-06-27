@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal interface Iterable
+    public interface Iterable
     {
+        Iterador crearIterador();
     }
 }

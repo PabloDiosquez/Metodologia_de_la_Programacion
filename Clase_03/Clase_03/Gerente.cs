@@ -30,13 +30,23 @@ namespace Clase_03
         /// </summary>
         /// <param name="monto">Monto de la venta realizada</param>
         /// <param name="vendedor">Vendedor</param>
-        public void venta(Venta venta) { }
+        public void venta(double montoVenta, IObservado vendedor)
+        {
+            double montoASuperar = 5000;
+
+            if (montoVenta > montoASuperar)
+            {
+                mejoresVendedores.agregar((Vendedor)vendedor);
+
+                ((Vendedor)vendedor).aumentaBonus();
+            }
+        }
 
         // Método de la interface IObservador
 
-        public void actualizar(IObservado observado)
+        public void actualizar(double monto, IObservado observado)
         {
-            venta((Vendedor(observado)).monto(), observado);
+            venta(monto, observado);
         }
     }
 }

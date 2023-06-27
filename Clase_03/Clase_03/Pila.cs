@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    public class Pila : Coleccionable
+    public class Pila : Coleccionable, Iterable
     {
         // Atributos
         List<Comparable> elementosApilados;
@@ -113,6 +113,12 @@ namespace Clase_03
             }
 
             return comparable2;
+        }
+
+        // Método de la interface iterable
+        public Iterador crearIterador()
+        {
+            return new IteradorDeLista(elementosApilados);
         }
     }
 }

@@ -15,8 +15,6 @@ namespace Clase_03
 
         private List<IObservador> observadores;
 
-        public Venta nuevaVenta { get; set; }
-
         // Constructor
         public Vendedor(string nombre, int dni, double sueldoBasico) : base(nombre, dni)
         {
@@ -34,12 +32,8 @@ namespace Clase_03
         /// </summary>
         /// <param name="montoDeLaVenta"></param>
         public void venta(double monto)
-        {
-            nuevaVenta.setMonto(monto);
-
-            nuevaVenta.setVendedor(this);   
-            
-            notificar();
+        {   
+            notificar(monto);
 
             Console.WriteLine($"Monto de la venta: {monto}");
         }
@@ -63,11 +57,11 @@ namespace Clase_03
             observadores.Remove(observador);    
         }
 
-        public void notificar()
+        public void notificar(double monto)
         {
             foreach (IObservador observador in observadores)
             {
-                observador.actualizar(this);
+                observador.actualizar(monto, this);
             }
         }
     }
