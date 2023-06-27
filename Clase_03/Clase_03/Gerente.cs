@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    public class Gerente : Persona
+    public class Gerente : Persona, IObservador
     {
         private Coleccionable mejoresVendedores; //Es un Coleccionable con los mejores vendedores
 
@@ -30,6 +30,13 @@ namespace Clase_03
         /// </summary>
         /// <param name="monto">Monto de la venta realizada</param>
         /// <param name="vendedor">Vendedor</param>
-        public void venta(double monto, Vendedor vendedor) { }
+        public void venta(Venta venta) { }
+
+        // Método de la interface IObservador
+
+        public void actualizar(IObservado observado)
+        {
+            venta((Vendedor(observado)).monto(), observado);
+        }
     }
 }

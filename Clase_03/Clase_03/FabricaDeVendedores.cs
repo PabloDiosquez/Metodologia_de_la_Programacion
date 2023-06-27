@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal class FabricaDeVendedores
+    public class FabricaDeVendedores : FabricaDeComparables
     {
+        public override Comparable crearAleatorio()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Comparable crearPorTeclado()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

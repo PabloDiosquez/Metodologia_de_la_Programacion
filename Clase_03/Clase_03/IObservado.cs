@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Clase_03
 {
-    internal interface IObservado
+    public interface IObservado
     {
+        void agregar(IObservador observador);
+
+        void quitar(IObservador observador);
+
+        void notificar(double numero);
     }
 }

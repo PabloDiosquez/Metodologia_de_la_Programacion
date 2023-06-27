@@ -15,6 +15,8 @@ namespace Clase_03
 
         private List<IObservador> observadores;
 
+        public Venta nuevaVenta { get; set; }
+
         // Constructor
         public Vendedor(string nombre, int dni, double sueldoBasico) : base(nombre, dni)
         {
@@ -33,6 +35,10 @@ namespace Clase_03
         /// <param name="montoDeLaVenta"></param>
         public void venta(double monto)
         {
+            nuevaVenta.setMonto(monto);
+
+            nuevaVenta.setVendedor(this);   
+            
             notificar();
 
             Console.WriteLine($"Monto de la venta: {monto}");

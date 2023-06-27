@@ -38,6 +38,9 @@ namespace Clase_03
                 case 2:
                     fabricaDeComparables = new FabricaDePersonas();
                     break;
+                case 3:
+                    fabricaDeComparables = new FabricaDeVendedores();
+                    break;
             }
 
             return fabricaDeComparables.crearPorTeclado();
