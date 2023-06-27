@@ -8,19 +8,30 @@ namespace Clase_03
 {
     public class Gerente : Persona, IObservador
     {
-        private Coleccionable mejoresVendedores; //Es un Coleccionable con los mejores vendedores
+        private Conjunto mejoresVendedores; //Es un Coleccionable con los mejores vendedores
 
         // Constructor
         public Gerente(string nombre, int dni) : base(nombre, dni)
         {
-            
         }
 
         /// <summary>
         /// Se ejecuta al final del día. Debe informar por consola el nombre y apellido de los "mejores" vendedores de
         /// la jornada, junto con su bonus acumulado.
         /// </summary>
-        public void cerrar() { }
+        public void cerrar()
+        {
+            Iterador iterador = mejoresVendedores.crearIterador();
+
+            iterador.primero();
+
+            while (!iterador.fin())
+            {
+                Console.WriteLine(iterador.actual().ToString());
+
+                iterador.siguiente();
+            }
+        }
 
         /// <summary>
         /// Recibe el "monto" facturado por una venta y el "vendedor" que la realizó.Si el "monto" es superior a 5000

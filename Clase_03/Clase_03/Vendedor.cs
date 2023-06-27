@@ -25,6 +25,13 @@ namespace Clase_03
             observadores = new List<IObservador>();
         }
 
+        // Getters
+
+        private double getBonus()
+        {
+            return bonus;
+        }
+
         // Métodos de instancia
 
         /// <summary>
@@ -44,6 +51,11 @@ namespace Clase_03
         public void aumentaBonus()
         {
             bonus += 0.1;
+        }
+
+        public override string ToString()
+        {
+            return $"Nombre: {this.getNombre()} -- Bonus acumulado: {getBonus()}"; 
         }
 
         // Métodos de la interface IObservado
