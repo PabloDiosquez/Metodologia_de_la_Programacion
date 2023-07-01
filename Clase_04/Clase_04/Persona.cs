@@ -14,15 +14,19 @@ namespace Clase_04
 
         private string nombre;
 
+        private string apellido;
+
         EstrategiaDeComparacion estrategia;
 
         // Constructor
 
-        public Persona(int dni, string nombre)
+        public Persona(int dni, string nombre, string apellido)
         {
             this.dni = dni;
 
             this.nombre = nombre;
+
+            this.apellido = apellido;   
 
             estrategia = new ComparacionPorDni();
         }
@@ -70,6 +74,13 @@ namespace Clase_04
         public bool sosMenor(Comparable comparable)
         {
             return estrategia.sosMenor(this, comparable);   
+        }
+
+        // ToString()
+
+        public override string ToString()
+        {
+            return $"{nombre} {apellido}";
         }
     }
 }
