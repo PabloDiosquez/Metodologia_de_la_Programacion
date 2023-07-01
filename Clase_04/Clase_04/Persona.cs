@@ -14,6 +14,8 @@ namespace Clase_04
 
         private string nombre;
 
+        EstrategiaDeComparacion estrategia;
+
         // Constructor
 
         public Persona(int dni, string nombre)
@@ -21,6 +23,8 @@ namespace Clase_04
             this.dni = dni;
 
             this.nombre = nombre;
+
+            estrategia = new ComparacionPorDni();
         }
 
         // Getters y Setters
@@ -45,20 +49,27 @@ namespace Clase_04
             this.nombre = nombre;
         }
 
+        // Moficación de la estrategia de comparación
+
+        public void setEstrategia(EstrategiaDeComparacion estrategia) 
+        {
+            this.estrategia = estrategia;
+        }
+
         // Métodos de la interface Comparable
         public bool sosIgual(Comparable comparable)
         {
-            throw new NotImplementedException();
+            return estrategia.sosIgual(this, comparable);
         }
 
         public bool sosMayor(Comparable comparable)
         {
-            throw new NotImplementedException();
+            return estrategia.sosMayor(this, comparable);   
         }
 
         public bool sosMenor(Comparable comparable)
         {
-            throw new NotImplementedException();
+            return estrategia.sosMenor(this, comparable);   
         }
     }
 }
