@@ -21,6 +21,8 @@ namespace Clase_04
         public Alumno(int dni, string nombre, string apellido, int legajo) : base(dni, nombre, apellido) 
         {
             this.legajo = legajo;
+
+            setEstrategia(new ComparacionPorCalificacion());
         }
 
         // Métodos de instancia
@@ -75,5 +77,6 @@ namespace Clase_04
         {
             this.calificacion = calificacion;
         }
+
     }
 }
