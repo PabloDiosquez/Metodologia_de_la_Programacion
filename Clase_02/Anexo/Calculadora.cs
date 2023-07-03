@@ -27,28 +27,13 @@ namespace Anexo
 
                 if (opcion == 0) break;
 
+                if (!(opcion >= 0 || opcion <= 4)) continue;
+
                 numero1 = validarNumero();
 
                 numero2 = validarNumero();
 
-                switch (opcion)
-                {
-                    case 1:
-                        operacion = new Suma();
-                        break;
-                    case 2:
-                        operacion = new Resta();
-                        break;
-                    case 3:
-                        operacion = new Producto();
-                        break;
-                    case 4:
-                        operacion = new Division();
-                        break;
-                    default:
-                        Console.WriteLine("Opción elegida no es válida. Intente de nuevo.\n");
-                        continue;
-                }
+                operacion = asignarOperacion(opcion);
 
                 Console.WriteLine($"Resultado: {operacion.operacion(numero1, numero2)}");
             }
@@ -93,6 +78,30 @@ namespace Anexo
             } 
 
             return numero; 
+        }
+
+        private IOperacion asignarOperacion(int opcion)
+        {
+            switch (opcion)
+            {
+                case 1:
+                    operacion = new Suma();
+                    break;
+                case 2:
+                    operacion = new Resta();
+                    break;
+                case 3:
+                    operacion = new Producto();
+                    break;
+                case 4:
+                    operacion = new Division();
+                    break;
+                default:
+                    Console.WriteLine("Opción elegida no es válida. Intente de nuevo.\n");
+                    break;
+            }
+
+            return operacion;
         }
     }
 }
