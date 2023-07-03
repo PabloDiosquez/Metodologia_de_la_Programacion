@@ -9,7 +9,7 @@ namespace Clase_04
 {
     public class AlumnoAdapter : Student
     {
-        private Alumno alumno;
+        private Alumno alumno; // Adaptable
 
         public AlumnoAdapter(Alumno alumno)
         {
