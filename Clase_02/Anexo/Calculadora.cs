@@ -27,7 +27,7 @@ namespace Anexo
 
                 if (opcion == 0) break;
 
-                if (!(opcion >= 0 || opcion <= 4)) continue;
+                if (!(opcion >= 0 && opcion <= 4)) continue;
 
                 numero1 = validarNumero();
 
@@ -60,11 +60,8 @@ namespace Anexo
                 Console.WriteLine("La opción elegida no es válida. Intente de nuevo.");
             }
 
-
-
             return opcion;  
         }
-
 
         private double validarNumero()
         {
