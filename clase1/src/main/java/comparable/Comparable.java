@@ -1,3 +1,5 @@
+package comparable;
+
 /**
  * Interfaz que define un contrato para comparar objetos.
  */

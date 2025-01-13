@@ -1,3 +1,5 @@
+import comparable.Comparable;
+
 public class Numero implements Comparable{
     private int valor;
 

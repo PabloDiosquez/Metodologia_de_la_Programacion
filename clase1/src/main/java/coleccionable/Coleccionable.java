@@ -1,3 +1,7 @@
+package coleccionable;
+
+import comparable.Comparable;
+
 /**
  * Interfaz que define las operaciones básicas para una colección de elementos comparables.
  */

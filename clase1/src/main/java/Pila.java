@@ -1,16 +1,13 @@
+import coleccionable.Coleccionable;
+import comparable.Comparable;
+
 /**
  * Clase que representa una pila, una estructura de datos LIFO (Last In, First Out).
- * Implementa la interfaz {Coleccionable} para operar sobre elementos {Comparable}.
+ * Implementa la interfaz {coleccionable.Coleccionable} para operar sobre elementos {comparable.Comparable}.
  */
 public class Pila implements Coleccionable {
 
     private Nodo tope = null;
-
-    /**
-     * Crea una pila vacía.
-     */
-    public Pila() {
-    }
 
     /**
      * Verifica si la pila está vacía.

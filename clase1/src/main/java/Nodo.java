@@ -1,3 +1,5 @@
+import comparable.Comparable;
+
 public class Nodo {
     private Comparable dato;
     private Nodo prox;
