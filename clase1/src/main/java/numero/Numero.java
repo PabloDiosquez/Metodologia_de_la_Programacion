@@ -1,3 +1,5 @@
+package numero;
+
 import comparable.Comparable;
 
 public class Numero implements Comparable{
