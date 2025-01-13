@@ -7,6 +7,10 @@ public class ColaImpl implements Cola, Coleccionable {
     private Nodo ult;
     private int cant;
 
+    public Nodo getPrim() {
+        return prim;
+    }
+
     @Override
     public void encolar(Comparable comparable) {
         Nodo nuevo = new Nodo(comparable);
@@ -49,12 +53,34 @@ public class ColaImpl implements Cola, Coleccionable {
 
     @Override
     public Comparable minimo() {
-        return null;
+        if(this.estaVacia()){
+            return null;
+        }
+        IteradorCola it = new IteradorColaImpl(this);
+        Comparable minActual = this.verPrimero();
+        while(it.hayAlgoMasParaVer()){
+            if(it.verActual().sosMenor(minActual)){
+                minActual = it.verActual();
+            }
+            it.siguiente();
+        }
+        return minActual;
     }
 
     @Override
     public Comparable maximo() {
-        return null;
+        if(this.estaVacia()){
+            return null;
+        }
+        IteradorCola it = new IteradorColaImpl(this);
+        Comparable maxActual = this.verPrimero();
+        while(it.hayAlgoMasParaVer()){
+            if(it.verActual().sosMayor(maxActual)){
+                maxActual = it.verActual();
+            }
+            it.siguiente();
+        }
+        return maxActual;
     }
 
     @Override
@@ -63,6 +89,13 @@ public class ColaImpl implements Cola, Coleccionable {
     }
     @Override
     public boolean pertenece(Comparable comparable) {
+        IteradorCola it = new IteradorColaImpl(this);
+        while(it.hayAlgoMasParaVer()){
+            if(it.verActual().sosIgual(comparable)){
+                return true;
+            }
+            it.siguiente();
+        }
         return false;
     }
 }

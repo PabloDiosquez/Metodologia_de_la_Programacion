@@ -42,4 +42,5 @@ public interface Cola {
      * @return {@code true} si la cola no contiene elementos; {@code false} en caso contrario.
      */
     boolean estaVacia();
+
 }
