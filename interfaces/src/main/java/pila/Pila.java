@@ -29,5 +29,5 @@ public interface Pila extends Coleccionable {
      *
      * @return el elemento en el tope de la pila, o {@code null} si la pila está vacía.
      */
-    Comparable verPrimero();
+    Comparable verTope();
 }
