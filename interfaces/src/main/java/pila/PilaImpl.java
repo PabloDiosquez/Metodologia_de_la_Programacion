@@ -6,6 +6,11 @@ import nodo.Nodo;
 public class PilaImpl implements Pila{
     private Nodo<Comparable> tope;
     private int cantidad;
+
+    public Nodo<Comparable> getTope() {
+        return tope;
+    }
+
     public PilaImpl() {
         this.tope = null;
         this.cantidad = 0;

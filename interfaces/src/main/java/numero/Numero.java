@@ -27,4 +27,9 @@ public class Numero implements Comparable {
     public Boolean sosMayor(Comparable comparable) {
         return this.getValor() > ((Numero)comparable).getValor();
     }
+
+    @Override
+    public String toString() {
+        return String.format("%d", getValor());
+    }
 }

@@ -22,4 +22,8 @@ public class Nodo<T> {
     public Nodo<T> getProx() {
         return prox;
     }
+
+    public void setProx(Nodo<T> prox) {
+        this.prox = prox;
+    }
 }
