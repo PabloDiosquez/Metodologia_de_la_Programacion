@@ -23,16 +23,16 @@ public interface Cola extends Coleccionable {
     /**
      * Elimina y retorna el elemento que está al frente de la cola.
      *
-     * @return El elemento {@link Comparable} al frente de la cola,
-     *         o {@code null} si la cola está vacía.
+     * @return El elemento {@link Comparable} al frente de la cola.
+     * Pre: La cola debe tener al menos un elemento.
      */
     Comparable quitar();
 
     /**
      * Retorna el elemento que está al frente de la cola sin eliminarlo.
      *
-     * @return El elemento {@link Comparable} al frente de la cola,
-     *         o {@code null} si la cola está vacía.
+     * @return El elemento {@link Comparable} al frente de la cola.
+     *  Pre: La cola debe tener al menos un elemento.
      */
     Comparable verPrimero();
 }
